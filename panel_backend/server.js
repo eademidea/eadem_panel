@@ -1,17 +1,23 @@
 const express = require('express')
 const http = require('http')
-const socket = require('socket.io')
 const app = express()
 const server = http.createServer(app)
-const io = socket(server)
-
+const io = require('socket.io')(server, {
+    cors: {
+      origin: '*',
+    }
+  });
 
 SERVER_HOST="localhost"
 SERVER_PORT="4004"
 
+app.get('/testerino',(req,res)=>{
+    io.emit('data.client', "teste desenvolvimento ok!")
+    res.send("ok!")
+})
 
 io.on('connection', socket => {
-    console.log("Connection => Server has connected...")
+    console.log("Connection => Server has connected...".concat(socket.id))
     socket.on("data.client", (data) => {
         console.log(`data.client => `, data)
     })
