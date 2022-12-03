@@ -12,7 +12,10 @@ SERVER_HOST="localhost"
 SERVER_PORT="4004"
 
 app.get('/testerino',(req,res)=>{
-    io.emit('data.client', "teste desenvolvimento ok!")
+    io.emit('data.client', {
+        'id': 1,
+        'nome': "testerino"
+    })
     res.send("ok!")
 })
 
@@ -21,6 +24,8 @@ io.on('connection', socket => {
     socket.on("data.client", (data) => {
         console.log(`data.client => `, data)
     })
+
+
 
     socket.on("disconnect", () => {
         console.log("Disconnect => A connection was disconnected...")
