@@ -1,16 +1,18 @@
-var express = require('express')
-var http = require('http')
+import express from 'express'
+import http from 'http'
 var app = express()
 var server = http.createServer(app)
-var io = require('socket.io')(server, {
+
+import { Server } from "socket.io";
+
+var io = new Server(server, {
     cors: {
         origin: '*',
     }
 });
 
-
-SERVER_HOST = "localhost"
-SERVER_PORT = "4004"
+const SERVER_HOST = "localhost"
+const SERVER_PORT = "4004"
 
 app.post('/chamar', (req, res) => {
     var nome = req.headers.nome
@@ -28,4 +30,3 @@ app.post('/chamar', (req, res) => {
 server.listen(SERVER_PORT, SERVER_HOST, () => {
     console.log(`server is running ${SERVER_HOST}/${SERVER_PORT} `)
 })
-
