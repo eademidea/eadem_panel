@@ -1,8 +1,6 @@
-import callClient from '../controller/ClientController'
-var app = express()
-var server = http.createServer(app)
-
-app.post('/chamar', (req, res) => {
-    callClient(req, res)
-    res.send("ok!")
-})
+module.exports = (app) => {
+    app.post('/teste', (req, res) => {
+        app.controllers.ClientController.callClient(app, req)
+        res.send("ok!")
+    })
+}

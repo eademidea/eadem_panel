@@ -1,9 +1,10 @@
 
-export default function callClient(req, res) {
-    sendInfoToReact(req)
-}
 
-function sendInfoToReact(req) {
+  
+module.exports.callClient = (app, req) => {
+
+    console.log('cheeegueei aqui...')
+
     var nome = req.headers.nome
     var senha = `Senha: ${req.headers.senha}`
     var guiche = `Guichê: ${req.headers.guiche}`
