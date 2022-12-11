@@ -1,8 +1,4 @@
-
-
-  
 module.exports.callClient = (app, req) => {
-
     console.log('cheeegueei aqui...')
 
     var nome = req.headers.nome

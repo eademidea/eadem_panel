@@ -1,13 +1,11 @@
 
 var app = require('./configs/ServerConfig')
 var server = app.configs.HttpConfig;
-
 var io = require('socket.io')(server, {
   cors: {
     origin: '*',
   }
 });
-
 
 const SERVER_HOST = "localhost"
 const SERVER_PORT = "4004"
