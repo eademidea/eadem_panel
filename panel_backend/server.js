@@ -1,4 +1,3 @@
-
 var app = require('./configs/ServerConfig')
 var server = app.configs.HttpConfig;
 var io = require('socket.io')(server, {
@@ -10,6 +9,10 @@ var io = require('socket.io')(server, {
 const SERVER_HOST = "localhost"
 const SERVER_PORT = "4004"
 
+
+/*
+  Único endPoint que usará socket, esse ficará fora do arquivo de rotas no momento.
+ */
 app.post('/chamar', (req, res) => {
   var nome = req.headers.nome
   var senha = `Senha: ${req.headers.senha}`
