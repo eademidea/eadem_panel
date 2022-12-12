@@ -1,0 +1,13 @@
+#bigbox {
+    background-color: blue;
+    margin-left: 1%;
+}
+
+#litlebox {
+    background-color: red;
+    margin-right: 1%;
+}
+
+#titulo {
+    background-color: brown;
+}
