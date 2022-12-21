@@ -1,6 +1,6 @@
-module.exports = (app) => {
-    app.post('/teste', (req, res) => {
-        app.controllers.ClientController.callClient(app, req)
-        res.send("ok!")
-    })
-}
+// module.exports = (app) => {
+//     app.post('/banco', (req, res) => {
+//         app.controllers.ClientController.callClient(app, req)
+//         res.send("ok!")
+//     })
+// }
