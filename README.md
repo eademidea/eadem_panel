@@ -14,6 +14,7 @@ SQLite
 Consign
 Nodemon
 React
+Jest
 
 Propósito do software:
 
@@ -22,3 +23,7 @@ de clientes referente à paineis de senha existente.
 
 [... Será detalhado a documentação para uso.]
 
+
+Para rodar os testes unitários execute o comando:
+
+npm test

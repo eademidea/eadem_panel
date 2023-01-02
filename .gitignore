@@ -1,4 +1,6 @@
 node_modules/
 database.db
+coverage
 .vscode
 panel_backend/coverage
+
