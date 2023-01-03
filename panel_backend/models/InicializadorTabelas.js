@@ -10,8 +10,4 @@ module.exports.criarTabela = (app) => {
         db.exec(creteSql);
         console.log ('tabela criada')
     })
-    
-
 }
-
-

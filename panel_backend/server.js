@@ -1,4 +1,4 @@
-require('./enviroments/panel.example.env')
+require('./enviroments/panel.dev.env')
 var app = require('./configs/ServerConfig')
 var server = app.configs.HttpConfig;
 var io = require('socket.io')(server, {
@@ -6,8 +6,6 @@ var io = require('socket.io')(server, {
         origin: '*',
     }
 });
-
-
 
 /*
   Único endPoint que usará socket, esse ficará fora do arquivo de rotas no momento.
@@ -32,6 +30,6 @@ app.post('/chamar', (req, res) => {
 
 
 server.listen(SERVER_PORT, SERVER_HOST, () => {
-    app.models.criacaoTabela.criarTabela(app)
+    app.models.InicializadorTabelas.criarTabela(app)
     console.log(`server is running ${SERVER_HOST}/${SERVER_PORT} `)
 })
