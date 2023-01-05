@@ -10,7 +10,7 @@ var io = require('socket.io')(server, {
 /*
   Único endPoint que usará socket, esse ficará fora do arquivo de rotas no momento.
  */
-app.post('/chamar', (req, res) => {
+app.post('/chamar', async (req, res) => {
     var nome = req.headers.nome
     var senha = req.headers.senha
     var guiche = req.headers.guiche
@@ -20,12 +20,11 @@ app.post('/chamar', (req, res) => {
         'guiche': guiche
     }
     app.controllers.ClientController.gravarCliente(app, cliente)
+    var response = await app.controllers.ClientController.obterUltimosRegistros(app, req);
     io.emit('data.client', {
-        "nome": nome,
-        "senha": senha,
-        "guiche": guiche
+        "clientes": response
     })
-    res.send("ok!")
+    res.send('Ok!')
 })
 
 
