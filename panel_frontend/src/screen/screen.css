@@ -9,32 +9,35 @@
 }
 
 #leftbox {
-    width: 46%;
-    height: 80%;
+    width: 47%;
+    height: 75%;
     background-color: blue;
     margin-left: 2.5%;
-    margin-top: 8%;
+    margin-top: 11%;
     border-radius: 3px;
     overflow: hidden;
     overflow-wrap: break-word;
     position: absolute;
     padding: 0;
+    font-size: xx-large;
+    text-align: center;
 }
 
 #rightbox {
-    width: 46%;
-    height: 80%;
+    width: 47%;
+    height: 75%;
     background-color: red;
     border-radius: 3px;
     overflow: hidden;
-    margin-left: 51.5%;
-    margin-top: 8%;
+    margin-left: 50.5%;
+    margin-top: 11%;
     overflow-wrap: break-word;
     position: absolute;
     padding: 0;
 }
 
 #title {
+    height: 12%;
     position: absolute;
     margin-top: 1%;
     background-color: #7B68EE;
@@ -42,19 +45,18 @@
     overflow: hidden;
     padding-bottom: 2%;
     text-align: center;
-    font-size: 20px;
     margin-left: 2.5%;
     width: 95%;
     text-align: center;
+    font-size: xx-large;
     overflow-wrap: break-word;
+
 }
 
 h1 {
-    font-family: 'Courier New', Courier, monospace;
     color: white;
     font-weight: bold;
     font-style: normal;
-    font-size: 20px;
 }
 
 body {
@@ -67,24 +69,22 @@ body {
 #nome {
     text-align: center;
     padding-top: 2%;
-    font-size: 2em;
     margin: auto;
     padding-bottom: 2%;
 }
 
 
 .clients {
-    font-family: 'Courier New', Courier, monospace;
     color: white;
     font-weight: bold;
     font-style: normal;
-    font-size: 2em;
     list-style: none;
-    padding-top: 10%;
     overflow-wrap: break-word;
 }
 
 
 .clients li {
     list-style: none;
+    font-size: xx-large;
+    text-align: center;
 }
