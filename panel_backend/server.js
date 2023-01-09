@@ -7,24 +7,36 @@ var io = require('socket.io')(server, {
     }
 });
 
+const { header, validationResult } = require('express-validator');
+
 /*
   Único endPoint que usará socket, esse ficará fora do arquivo de rotas no momento.
  */
-app.post('/chamar', async (req, res) => {
-    var nome = req.headers.nome
-    var senha = req.headers.senha
-    var guiche = req.headers.guiche
-    var cliente = {
-        'nome': nome,
-        'senha': senha,
-        'guiche': guiche
+app.post('/chamar', [
+    header('nome').notEmpty().withMessage("O campo nome é obrigatório")
+    , header('senha').notEmpty().withMessage("O campo nome é obrigatório")
+    , header('guiche').notEmpty().withMessage("O campo nome é obrigatório")
+], async (req, res) => {
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
     }
-    app.controllers.ClientController.gravarCliente(app, cliente)
+
+    app.controllers.ClientController.gravarCliente(app, {
+        'nome': req.headers.nome,
+        'senha': req.headers.senha,
+        'guiche': req.headers.guiche
+    })
+
+
     var response = await app.controllers.ClientController.obterUltimosRegistros(app, req);
+
     io.emit('data.client', {
         "clientes": response
     })
-    res.send('Ok!')
+
+    res.send(response)
 })
 
 

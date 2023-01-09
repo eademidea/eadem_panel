@@ -1,4 +1,6 @@
-module.exports.gravaClientes = (app, cliente) => {
+module.exports.gravaClientes = gravaClientes;
+
+async function gravaClientes(app, cliente) {
   var sqlite = app.configs.SqliteConfig
   sqlite.openDb().then(db => {
     var nome = cliente.nome;

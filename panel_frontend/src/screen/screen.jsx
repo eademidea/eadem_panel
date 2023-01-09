@@ -30,6 +30,7 @@ function getClients() {
 
 const socket = io('http://localhost:4004')
 socket.on('data.client', (data) => {
+    console.log(data)
     // Não é uma prática adequada fazer este processo pelo DOM. Será um ajuste para releases futuras.
     document.getElementById('nome').innerHTML = `${data.clientes[0].ID} - ${data.clientes[0].nome}`;
     document.getElementById('senha').innerHTML = `Senha: ${data.clientes[0].senha}`;
@@ -42,6 +43,7 @@ socket.on('data.client', (data) => {
     document.getElementById('cliente5').innerHTML = `${data.clientes[4].nome} - Guichê: ${data.clientes[4].guiche} `;
     document.getElementById('cliente6').innerHTML = `${data.clientes[5].nome} - Guichê: ${data.clientes[5].guiche} `;
 
+    
 })
 
 function getLastClients(yourUrl) {
