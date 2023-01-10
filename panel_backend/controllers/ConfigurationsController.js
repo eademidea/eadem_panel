@@ -1,5 +1,4 @@
 module.exports.registerConfiguration = (app, req, res) => {
-    console.log("chegui")
     app.models.ConfigurationsCrud.deleteConfigurations(app)
     app.models.ConfigurationsCrud.registerConfigurations(app, req)
     res.send("Ok!")
