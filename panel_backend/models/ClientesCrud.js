@@ -6,7 +6,7 @@ async function gravaClientes(app, cliente) {
     var nome = cliente.nome;
     var senha = cliente.senha;
     var guiche = cliente.guiche;
-    (db.exec(`INSERT INTO clientes ( nome,senha,guiche)  VALUES ('${nome}','${senha}','${guiche}') `));
+    (db.exec(`INSERT INTO clientes (nome,senha,guiche)  VALUES ('${nome}','${senha}','${guiche}') `));
   });
 }
 

@@ -1,5 +1,6 @@
 require('./enviroments/panel.dev.env')
 var app = require('./configs/ServerConfig')
+const { header, validationResult } = require('express-validator');
 var server = app.configs.HttpConfig;
 var io = require('socket.io')(server, {
     cors: {
@@ -7,7 +8,7 @@ var io = require('socket.io')(server, {
     }
 });
 
-const { header, validationResult } = require('express-validator');
+
 
 /*
   Único endPoint que usará socket, esse ficará fora do arquivo de rotas no momento.
@@ -41,6 +42,6 @@ app.post('/chamar', [
 
 
 server.listen(SERVER_PORT, SERVER_HOST, () => {
-    app.models.InicializadorTabelas.criarTabela(app)
+    app.controllers.ClientController.initTables(app)
     console.log(`server is running ${SERVER_HOST}/${SERVER_PORT} `)
 })

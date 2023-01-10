@@ -1,5 +1,6 @@
-module.exports.callClient = (app, req) => {
-    app.models.InicializadorTabelas.criarTabela(app)
+module.exports.initTables = (app, req) => {
+    app.models.InicializadorTabelas.criarTabelaClients(app)
+    app.models.InicializadorTabelas.criarTabelaConfiguracoes(app)
 }
 
 module.exports.gravarCliente = gravarCliente;
