@@ -4,28 +4,37 @@ import RightBox from './right-box/rightbox'
 import Title from './title/title'
 import "./screen.css"
 import MockData from "../resources/mockdata.json"
+import MockConfigurations from "../resources/mockconfigurations.json"
 
 var clients = getClients();
+var configurations = getConfiguration();
 
 export default (props) => {
-
     return <>
-
         <div className="screen">
-            <Title clients={clients}></Title>
-            <LeftBox clients={clients}></LeftBox>
-            <RightBox clients={clients}></RightBox>
+            <Title configurations={configurations} clients={clients}></Title>
+            <LeftBox configurations={configurations} clients={clients}></LeftBox>
+            <RightBox configurations={configurations} clients={clients}></RightBox>
         </div>
     </>
 }
 
 
 function getClients() {
-    var lastClients = JSON.parse(getLastClients("http://localhost:4004/obterUltimosRegistros"));
+    var lastClients = JSON.parse(getResponse("http://localhost:4004/obter-ultimos-registros"));
     if (lastClients.length == 0) {
         lastClients = MockData;
     }
     return lastClients;
+}
+
+function getConfiguration() {
+    var configurations = JSON.parse(getResponse("http://localhost:4004/obter-configuracoes"));
+    if (configurations != null && configurations.length > 0) {
+        return configurations[0];
+    } else {
+        return MockConfigurations[0];
+    }
 }
 
 const socket = io('http://localhost:4004')
@@ -43,10 +52,10 @@ socket.on('data.client', (data) => {
     document.getElementById('cliente5').innerHTML = `${data.clientes[4].nome} - Guichê: ${data.clientes[4].guiche} `;
     document.getElementById('cliente6').innerHTML = `${data.clientes[5].nome} - Guichê: ${data.clientes[5].guiche} `;
 
-    
+
 })
 
-function getLastClients(yourUrl) {
+function getResponse(yourUrl) {
     var Httpreq = new XMLHttpRequest();
     Httpreq.open("GET", yourUrl, false);
     Httpreq.send(null);

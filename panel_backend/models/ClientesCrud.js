@@ -13,7 +13,6 @@ async function gravaClientes(app, cliente) {
 module.exports.obterUltimosRegistros = obterRegistros;
 
 async function obterRegistros(app) {
-  console.log('chegueeeei')
   var sqlite = app.configs.SqliteConfig
   var query = `SELECT * FROM clientes WHERE date(data_hora_chamada) = date() ORDER BY id desc LIMIT 6`
   return sqlite.openDb().then(db => {

@@ -1,9 +1,12 @@
 module.exports.registerConfigurations = (app, req) => {
     const insert = `INSERT INTO CONFIGURACOES 
-    (corFonteCabecalho, corFundoCabecalho, corFonteQuadro, corQuadro, corFundo) 
+    (corFonteCabecalho, corFundoCabecalho, corQuadroDireito
+        , corQuadroEsquerdo, corFonteQuadroEsquerdo, corFonteQuadroDireito, corFundo) 
     VALUES 
-    ('${req.headers.corfontecabecalho}', '${req.headers.corfundocabecalho}', '${req.headers.corfontequadro}',
-    '${req.headers.corquadro}','${req.headers.corfundo}')`
+    ('${req.headers.corfontecabecalho}', '${req.headers.corfundocabecalho}', 
+    '${req.headers.corquadrodireito}', '${req.headers.corquadroesquerdo}',
+    '${req.headers.corfontequadroesquerdo}','${req.headers.corfontequadrodireito}',    
+    '${req.headers.corfundo}')`
     var sqlite = app.configs.SqliteConfig
     sqlite.openDb().then(db => {
         (db.exec(insert))

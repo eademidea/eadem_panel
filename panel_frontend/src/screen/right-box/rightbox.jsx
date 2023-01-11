@@ -10,8 +10,8 @@ export default (props) => {
     });
 
     return <>
-        <div id="rightbox">
-            <div className="clients">
+        <div id="rightbox" style={{background: props.configurations.corQuadroDireito}}>
+            <div className="clients" style={{color: props.configurations.corFonteQuadroDireito}}>
                 <ul>
                     {dataComponent}
                 </ul>

@@ -1,8 +1,8 @@
 import "../screen.css"
 export default (props) => {
     return <>
-        <div id="title">
-            <h1 id="nome">
+        <div id="title" style={{background: props.configurations.corFundoCabecalho}}>
+            <h1 id="nome" style={{color: props.configurations.corFonteCabecalho}}>
                 {props.clients[0].nome}
             </h1>
         </div>

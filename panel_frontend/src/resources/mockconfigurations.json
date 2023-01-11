@@ -1,0 +1,11 @@
+[
+    {
+        "corFonteCabecalho": "#FFF",
+        "corFundoCabecalho": "#004aad",
+        "corQuadroEsquerdo": "#004aad",
+        "corQuadroDireito": "#004aad",
+        "corFonteQuadroEsquerdo": "#FFF",
+        "corFonteQuadroDireito": "#FFF",
+        "corFundo": "black"
+    }
+]

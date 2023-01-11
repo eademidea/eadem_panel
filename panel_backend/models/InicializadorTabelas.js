@@ -17,8 +17,10 @@ module.exports.criarTabelaConfiguracoes = (app) => {
                     (ID INTEGER PRIMARY KEY AUTOINCREMENT
                     , corFonteCabecalho VARCHAR(25)
                     , corFundoCabecalho VARCHAR(25)
-                    , corFonteQuadro VARCHAR(25)
-                    , corQuadro VARCHAR(25)
+                    , corQuadroEsquerdo VARCHAR(25)
+                    , corQuadroDireito VARCHAR(25)
+                    , corFonteQuadroEsquerdo VARCHAR(25)
+                    , corFonteQuadroDireito VARCHAR(25)
                     , corFundo VARCHAR(25)
                     , data_hora_chamada TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP) `;
     cria.openDb().then(db => {

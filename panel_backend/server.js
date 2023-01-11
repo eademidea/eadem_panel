@@ -8,8 +8,6 @@ var io = require('socket.io')(server, {
     }
 });
 
-
-
 /*
   Único endPoint que usará socket, esse ficará fora do arquivo de rotas no momento.
  */
