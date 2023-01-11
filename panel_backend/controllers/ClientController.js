@@ -6,7 +6,7 @@ module.exports.initTables = (app, req) => {
 module.exports.gravarCliente = gravarCliente;
 
 async function gravarCliente(app, cliente) {
-    app.models.ClientesCrud.gravaClientes(app, cliente)
+    return app.models.ClientesCrud.gravaClientes(app, cliente)
 }
 
 module.exports.obterUltimosRegistros = obterRegistros;

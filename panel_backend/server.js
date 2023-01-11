@@ -22,20 +22,21 @@ app.post('/chamar', [
         return res.status(400).json({ errors: errors.array() });
     }
 
-    app.controllers.ClientController.gravarCliente(app, {
+    await app.controllers.ClientController.gravarCliente(app, {
         'nome': req.headers.nome,
         'senha': req.headers.senha,
         'guiche': req.headers.guiche
     })
 
-
-    var response = await app.controllers.ClientController.obterUltimosRegistros(app, req);
-
-    io.emit('data.client', {
-        "clientes": response
-    })
-
-    res.send(response)
+   
+    setTimeout(async() => {
+        var response = await app.controllers.ClientController.obterUltimosRegistros(app, req);
+        io.emit('data.client', {
+            "clientes": response
+        })
+        res.send(response)
+    }, 500);
+    
 })
 
 
