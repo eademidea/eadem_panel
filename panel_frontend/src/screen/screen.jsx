@@ -11,7 +11,7 @@ var configurations = getConfiguration();
 
 export default (props) => {
     return <>
-        <div className="screen">
+        <div className="screen" style={{background: configurations.corFundo}}>
             <Title configurations={configurations} clients={clients}></Title>
             <LeftBox configurations={configurations} clients={clients}></LeftBox>
             <RightBox configurations={configurations} clients={clients}></RightBox>
