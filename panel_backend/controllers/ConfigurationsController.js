@@ -1,7 +1,6 @@
 module.exports.registerConfiguration = (app, req) => {
     app.models.ConfigurationsCrud.deleteConfigurations(app)
     setTimeout(async() => {
-        app.controllers.ClientController.obterUltimosRegistros(app, req);
         app.models.ConfigurationsCrud.registerConfigurations(app, req)
     }, 500);
     
