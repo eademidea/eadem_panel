@@ -13,7 +13,7 @@
     height: 75%;
     background-color: blue;
     margin-left: 2.5%;
-    margin-top: 11%;
+    bottom: 4%;
     border-radius: 3px;
     overflow: hidden;
     overflow-wrap: break-word;
@@ -29,8 +29,8 @@
     background-color: red;
     border-radius: 3px;
     overflow: hidden;
-    margin-left: 50.5%;
-    margin-top: 11%;
+    right: 2.5%;
+    bottom: 4%;
     overflow-wrap: break-word;
     position: absolute;
     padding: 0;
@@ -50,7 +50,6 @@
     text-align: center;
     font-size: xx-large;
     overflow-wrap: break-word;
-
 }
 
 h1 {
@@ -85,6 +84,7 @@ body {
 
 .clients li {
     list-style: none;
-    font-size: xx-large;
+    font-size: xxx-large;
     text-align: center;
+    padding-bottom: 4%;
 }

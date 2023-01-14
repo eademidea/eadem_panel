@@ -1,7 +1,5 @@
 import "../screen.css"
 export default (props) => {
-    console.log(props.configurations)
-    console.log(props.configurations.corFonteCabecalho)
     return <>
         <div id="leftbox"  style={{background: props.configurations.corQuadroEsquerdo}}>
             <div>
