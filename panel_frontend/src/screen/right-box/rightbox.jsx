@@ -4,7 +4,7 @@ export default (props) => {
     var counter = 1;
     props.clients.map((client) => {
         dataComponent.push(
-            <li id={"cliente" + counter}> {client.nome.slice(0,26)} - Guichê: {client.guiche}</li>
+            <li key={counter} id={"cliente" + counter}> {client.nome.slice(0,26)} - Guichê: {client.guiche}</li>
         );
         counter = counter + 1;
     });

@@ -39,20 +39,20 @@ function getConfiguration() {
 
 const socket = io('http://localhost:4004')
 socket.on('data.client', (data) => {
-    console.log(data)
     // Não é uma prática adequada fazer este processo pelo DOM. Será um ajuste para releases futuras.
-    document.getElementById('nome').innerHTML = `${data.clientes[0].nome.slice(0,36)}`;
+    document.getElementById('nome').innerHTML = `${data.clientes[0].nome.slice(0, 36)}`;
     document.getElementById('senha').innerHTML = `Senha: ${data.clientes[0].senha}`;
     document.getElementById('guiche').innerHTML = `Guichê: ${data.clientes[0].guiche}`;
 
-    document.getElementById('cliente1').innerHTML = `${data.clientes[0].nome.slice(0,26)} - Guichê:  ${data.clientes[0].guiche} `;
-    document.getElementById('cliente2').innerHTML = `${data.clientes[1].nome.slice(0,26)} - Guichê: ${data.clientes[1].guiche} `;
-    document.getElementById('cliente3').innerHTML = `${data.clientes[2].nome.slice(0,26)} - Guichê: ${data.clientes[2].guiche} `;
-    document.getElementById('cliente4').innerHTML = `${data.clientes[3].nome.slice(0,26)} - Guichê: ${data.clientes[3].guiche} `;
-    document.getElementById('cliente5').innerHTML = `${data.clientes[4].nome.slice(0,26)} - Guichê: ${data.clientes[4].guiche} `;
-    document.getElementById('cliente6').innerHTML = `${data.clientes[5].nome.slice(0,26)} - Guichê: ${data.clientes[5].guiche} `;
+    document.getElementById('cliente1').innerHTML = `${data.clientes[0].nome.slice(0, 26)} - Guichê:  ${data.clientes[0].guiche} `;
+    document.getElementById('cliente2').innerHTML = `${data.clientes[1].nome.slice(0, 26)} - Guichê: ${data.clientes[1].guiche} `;
+    document.getElementById('cliente3').innerHTML = `${data.clientes[2].nome.slice(0, 26)} - Guichê: ${data.clientes[2].guiche} `;
+    document.getElementById('cliente4').innerHTML = `${data.clientes[3].nome.slice(0, 26)} - Guichê: ${data.clientes[3].guiche} `;
+    document.getElementById('cliente5').innerHTML = `${data.clientes[4].nome.slice(0, 26)} - Guichê: ${data.clientes[4].guiche} `;
+    document.getElementById('cliente6').innerHTML = `${data.clientes[5].nome.slice(0, 26)} - Guichê: ${data.clientes[5].guiche} `;
 
-
+    const audio = new Audio(require('../resources/toque.mp3')) 
+    audio.play()
 })
 
 function getResponse(yourUrl) {
