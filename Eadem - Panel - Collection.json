@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "fd88906d-c31b-4b14-8045-0cab70f28434",
+		"name": "Eadem - Panel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5068569"
+	},
+	"item": [
+		{
+			"name": "localhost:4004/obter-configuracoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4004/obter-configuracoes",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"obter-configuracoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4004/registrar-configuracao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "corFonteCabecalho",
+						"value": "#FFF",
+						"type": "text"
+					},
+					{
+						"key": "corFundoCabecalho",
+						"value": "black",
+						"type": "text"
+					},
+					{
+						"key": "corFonteQuadroDireito",
+						"value": "#FFF",
+						"type": "text"
+					},
+					{
+						"key": "corFonteQuadroEsquerdo",
+						"value": "blue",
+						"type": "text"
+					},
+					{
+						"key": "corFundo",
+						"value": "yellow",
+						"type": "text"
+					},
+					{
+						"key": "corQuadroDireito",
+						"value": "#004aad",
+						"type": "text"
+					},
+					{
+						"key": "corQuadroEsquerdo",
+						"value": "red",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4004/registrar-configuracao",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"registrar-configuracao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4004/obter-ultimos-registros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4004/obter-ultimos-registros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"obter-ultimos-registros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4004/chamar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "nome",
+						"value": "Ribamar Oliveira",
+						"type": "text"
+					},
+					{
+						"key": "senha",
+						"value": "S009",
+						"type": "text"
+					},
+					{
+						"key": "guiche",
+						"value": "4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"teste\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4004/chamar",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"chamar"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4004/limpar-configuracoes",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4004/limpar-configuracoes",
+					"host": [
+						"localhost"
+					],
+					"port": "4004",
+					"path": [
+						"limpar-configuracoes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
