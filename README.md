@@ -21,7 +21,7 @@ Propósito do software:
 Propor ao usuário um painel desacoplado e que pode ser integrado à qualquer solução de chamada 
 de clientes referente à paineis de senha existente.
 
-[... Será detalhado a documentação para uso.]
+![Documento](https://i.postimg.cc/mgdGC4Cx/Screenshot-from-2023-01-15-18-43-22.png)
 
 
 Para rodar os testes unitários execute o comando:
